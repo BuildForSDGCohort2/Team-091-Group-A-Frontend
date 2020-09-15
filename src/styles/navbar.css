@@ -4,6 +4,10 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+.selected {
+    color: #000 !important;
+}
+
 @media (max-width: 767px){
     .nav-stuff {
         background-color: steelblue;
