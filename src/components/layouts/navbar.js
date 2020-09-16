@@ -1,5 +1,5 @@
 import React from "react"
-import {NavLink} from "react-router-dom"
+import {NavLink, Link} from "react-router-dom"
 import "../../styles/navbar.css"
 
 const Navbar = () => {
@@ -30,6 +30,9 @@ const Navbar = () => {
                 </li>
                 <li className="nav-item">
                     <NavLink className="nav-link" activeClassName="selected" to="/attractions">Attractions</NavLink>
+                </li>
+                <li className="nav-item">
+                    <Link className="nav-link btn btn-outline-success" to="/register">Create Account</Link>
                 </li>
                 </ul>
             </div>
