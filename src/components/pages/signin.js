@@ -29,6 +29,34 @@ const Signin = () => {
             setError("*Enter a valid email address")
             return false;
         }
+
+        // if all data is provided
+        if (email && password){
+            setError("")
+            setBtnValue("Processing...")
+
+            // prepare the data
+            const user = {
+                email,
+                password
+            }
+
+            axios({
+                method: "POST",
+                url: "https://backend-91.herokuapp.com/api/v1/auth/login",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                data: user
+            }).then((response) => {
+                successMsg()
+                console.log(response)
+            }).catch((error) => {
+                console.log(error);
+                setBtnValue("Log In")
+                errorMsg()
+            })
+        }
     }
 
     return (

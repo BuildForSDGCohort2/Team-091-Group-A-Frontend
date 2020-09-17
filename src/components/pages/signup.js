@@ -17,7 +17,6 @@ const Signup = () => {
 
     // success and error message
     const successMsg = () => toast.success("Account created successfully!");
-    const warningMsg = () => toast.warning("User already exists!")
     const errorMsg = () => toast.error("An error occurred!");
 
     //handle submit function
