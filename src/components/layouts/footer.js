@@ -12,7 +12,7 @@ const Footer = () => {
                         <h5 className="footer-headings footer-logo">About Us</h5>
                         <p className="footer-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum qui nam ipsum dolor temporibus reiciendis, sequi reprehenderit facere alias illo velit, eveniet ratione rem? Facere ipsum molestiae nobis recusandae! Tenetur?</p>
                         <p className="footer-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni nostrum enim ut minima doloremque quod suscipit ad aut quos minus dicta commodi error incidunt, laborum facilis provident non hic! Distinctio.</p>
-                        <p className="footer-copyright">&copy; 2020 TransAll. All rights reserved | Developed with <span className="text-danger">♥</span> by <a href="#" target="_blank" rel="noopener noreferrer">Team-091-Group A</a></p>
+                        <p className="footer-copyright">&copy; 2020 TransAll. All rights reserved | Developed with <span className="text-danger">♥</span> by <a href="https://github.com" target="_blank" rel="noopener noreferrer">Team-091-Group A</a></p>
                     </div>
                 
                     <div className="col-12 col-sm-5 order-1 order-md-2">

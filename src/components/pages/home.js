@@ -13,10 +13,10 @@ const Home = () => {
                                 <input type="search" className="form-control" />
                             </div>
                             <div className="col-12 col-sm-3 input-group pr-0">
-                                <input type="search" className="form-control" />
+                                <input type="date" className="form-control" />
                             </div>
                             <div className="col-12 col-sm-3 input-group pr-0">
-                                <input type="search" className="form-control" />
+                                <input type="date" className="form-control" />
                             </div>
                             <div className="col-12 col-sm-2 pr-0">
                                 <button className="btn btn-primary">Search</button>
