@@ -2,6 +2,8 @@ import React, {useState} from "react"
 import "../../styles/auth.css"
 import {Link} from "react-router-dom"
 import axios from 'axios'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Signup = () => {
     //setup our states using hooks
@@ -13,10 +15,15 @@ const Signup = () => {
     const [btnValue, setBtnValue] = useState("Sign Up")
     const [error, setError] = useState("")
 
+    // success and error message
+    const successMsg = () => toast.success("Slogan submitted successfully!");
+    const warningMsg = () => toast.warning("Record already exists!")
+    const errorMsg = () => toast.error("An error occurred!");
+
     //handle submit function
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log({firstname,lastname,email,password,confirmPassword})
+
         // check if all fields are filled
         if (!firstname || !lastname || !email || !password || !confirmPassword){
             setError("*All fields are required")
@@ -29,7 +36,19 @@ const Signup = () => {
         }
         // if all data is provided
         if ((firstname && lastname && email && password && confirmPassword) && password === confirmPassword){
-            console.log(true)
+            setError("")
+            setBtnValue("Processing...")
+            console.log({firstname,lastname,email,password,confirmPassword})
+
+            // prepare the data
+            const user = {
+                firstname,
+                lastname,
+                email,
+                password,
+                confirmPassword
+            }
+
         }else{
             setError("*Password does not match")
         }
@@ -41,10 +60,11 @@ const Signup = () => {
                 <div className="row pl-3">
                     <div className="col-md-4"></div>
                     <div className="col-md-4">
-                        <form className="card mt-5 pl-3">
+                    <ToastContainer />
+                        <form className="card mt-5 pl-3" onSubmit={handleSubmit}>
                             <h1 className="auth-heading">Create Your Account</h1>
                             <p className="auth-text">Welcome to a better way to travel and chop life</p>
-                            <p className="text-danger">{error}</p>
+                            <p className="text-danger error-note">{error}</p>
                             <div className="row input-group">
                                 <div className="col-12 mb-3">
                                     <label>First Name</label>
