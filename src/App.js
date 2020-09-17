@@ -12,6 +12,7 @@ import Trains from "./components/pages/trains";
 import Cars from "./components/pages/cars";
 import Tours from "./components/pages/tours";
 import Attractions from "./components/pages/attractions";
+import Dashboard from "./components/pages/dashboard";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/cars" component={Cars} />
           <Route path="/tours" component={Tours} />
           <Route path="/attractions" component={Attractions} />
+          <Route path="/user/dashboard" component={Dashboard} />
         </Switch>
         <Footer />
       </BrowserRouter>

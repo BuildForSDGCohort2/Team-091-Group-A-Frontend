@@ -16,8 +16,8 @@ const Signup = () => {
     const [error, setError] = useState("")
 
     // success and error message
-    const successMsg = () => toast.success("Slogan submitted successfully!");
-    const warningMsg = () => toast.warning("Record already exists!")
+    const successMsg = () => toast.success("Account created successfully!");
+    const warningMsg = () => toast.warning("User already exists!")
     const errorMsg = () => toast.error("An error occurred!");
 
     //handle submit function
@@ -38,16 +38,30 @@ const Signup = () => {
         if ((firstname && lastname && email && password && confirmPassword) && password === confirmPassword){
             setError("")
             setBtnValue("Processing...")
-            console.log({firstname,lastname,email,password,confirmPassword})
 
             // prepare the data
             const user = {
                 firstname,
                 lastname,
                 email,
-                password,
-                confirmPassword
+                password
             }
+
+            axios({
+                method: "POST",
+                url: "https://backend-91.herokuapp.com/api/v1/auth/register",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                data: user
+            }).then((response) => {
+                successMsg()
+                console.log(response)
+            }).catch((error) => {
+                console.log(error);
+                setBtnValue("Sign Up")
+                errorMsg()
+            })
 
         }else{
             setError("*Password does not match")
