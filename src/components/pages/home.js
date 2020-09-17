@@ -6,7 +6,7 @@ const Home = () => {
         <div>
             <div className="container-fluid home-banner">
                 <div className="row">
-                    <div className="col-md-2"></div>
+                    {/* <div className="col-md-2"></div>
                     <div className="col-12 col-sm-8 card bg-transparent mt-5">
                         <div className="row mt-4 mb-4">
                             <div className="col-12 col-sm-4 input-group pr-0">
@@ -23,7 +23,7 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-2"></div>
+                    <div className="col-md-2"></div> */}
                 </div>
             </div>
         </div>
