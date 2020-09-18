@@ -2,9 +2,9 @@ import React, {useState} from "react"
 import "../../styles/auth.css"
 import {Link} from "react-router-dom"
 import axios from 'axios'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import {saveToken} from '../helpers/utility'
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import {saveToken} from "../helpers/utility"
 
 const Signin = (props) => {
     //setup our states using hooks
@@ -48,7 +48,7 @@ const Signin = (props) => {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                data: user
+                data: JSON.stringify(user)
             }).then((response) => {
                 console.log(response)
                 // display success alert

@@ -1,6 +1,7 @@
 import React from "react"
-import {NavLink, Link} from "react-router-dom"
+import {NavLink} from "react-router-dom"
 import "../../styles/navbar.css"
+import { isLoggedIn, logout } from "../helpers/utility"
 
 const Navbar = () => {
     return (
@@ -31,9 +32,21 @@ const Navbar = () => {
                 <li className="nav-item">
                     <NavLink className="nav-link" activeClassName="selected" to="/attractions">Attractions</NavLink>
                 </li>
-                <li className="nav-item">
-                    <Link className="nav-link btn btn-outline-success" to="/sign-up">Create Account</Link>
-                </li>
+                { isLoggedIn() ?
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="#" onClick={() => logout()}>Log Out</NavLink>
+                    </li>
+                    :
+                    <li className="nav-item dropdown">
+                        <NavLink className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Account
+                        </NavLink>
+                        <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <NavLink className="dropdown-item" to="/sign-up">Sign Up</NavLink>
+                            <NavLink className="dropdown-item" to="/sign-in">Sign In</NavLink>
+                        </div>
+                    </li>
+                 }
                 </ul>
             </div>
             </nav>

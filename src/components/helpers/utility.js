@@ -9,7 +9,7 @@ export const getToken = () => {
 }
 
 export const setAuthToken = () => {
-    return `Bearer ${localStorage.getItem('transAllToken')}`
+    return `x-auth-token: ${localStorage.getItem('transAllToken')}`
 }
 
 export const isLoggedIn = () => {
