@@ -2,8 +2,8 @@ import React from "react";
 import "./App.css";
 import {BrowserRouter, Switch, Route} from "react-router-dom"
 import Home from "./components/pages/home";
-import Navbar from "./components/layouts/navbar";
-import Footer from "./components/layouts/footer";
+// import Navbar from "./components/layouts/navbar";
+// import Footer from "./components/layouts/footer";
 import Signin from "./components/auth/signin"
 import Signup from "./components/auth/signup"
 import Hotels from "./components/pages/hotels";
@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar />
+        {/* <Navbar /> */}
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/sign-in" component={Signin} />
@@ -31,7 +31,7 @@ function App() {
           <Route path="/attractions" component={Attractions} />
           <Route path="/users/dashboard" component={Dashboard} />
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
       </BrowserRouter>
     </div>
   );
