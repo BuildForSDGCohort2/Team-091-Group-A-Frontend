@@ -4,15 +4,15 @@ import {BrowserRouter, Switch, Route} from "react-router-dom"
 import Home from "./components/pages/home";
 import Navbar from "./components/layouts/navbar";
 import Footer from "./components/layouts/footer";
-import Signin from "./components/pages/signin"
-import Signup from "./components/pages/signup"
+import Signin from "./components/auth/signin"
+import Signup from "./components/auth/signup"
 import Hotels from "./components/pages/hotels";
 import Flights from "./components/pages/flights";
 import Trains from "./components/pages/trains";
 import Cars from "./components/pages/cars";
 import Tours from "./components/pages/tours";
 import Attractions from "./components/pages/attractions";
-import Dashboard from "./components/pages/dashboard";
+import Dashboard from "./components/users/dashboard";
 
 function App() {
   return (
