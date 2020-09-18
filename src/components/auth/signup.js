@@ -5,7 +5,7 @@ import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Signup = () => {
+const Signup = (props) => {
     //setup our states using hooks
     const [firstname, setFirstname] = useState("");
     const [lastname, setLastname] = useState("");
@@ -17,7 +17,7 @@ const Signup = () => {
 
     // success and error message
     const successMsg = () => toast.success("Account created successfully!");
-    const errorMsg = () => toast.error("An error occurred!");
+    const warningMsg = () => toast.warning("User already exist!");
 
     //handle submit function
     const handleSubmit = (e) => {
@@ -54,12 +54,26 @@ const Signup = () => {
                 },
                 data: user
             }).then((response) => {
+                // display success alert
                 successMsg()
-                console.log(response)
-            }).catch((error) => {
-                console.log(error);
+
+                // clear input fields
+                setFirstname("")
+                setLastname("")
+                setEmail("")
+                setPassword("")
+                setConfirmPassword("")
                 setBtnValue("Sign Up")
-                errorMsg()
+
+                // wait for 2seconds then redirect to sign in page
+                setTimeout(() => {
+                    props.history.push("/sign-in")
+                }, 2000)
+                
+            }).catch((error) => {
+                // console.log(error);
+                setBtnValue("Sign Up")
+                warningMsg()
             })
 
         }else{

@@ -4,8 +4,9 @@ import {Link} from "react-router-dom"
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {saveToken} from '../helpers/utility'
 
-const Signin = () => {
+const Signin = (props) => {
     //setup our states using hooks
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -14,7 +15,7 @@ const Signin = () => {
 
     // success and error message
     const successMsg = () => toast.success("Login was successfully!");
-    const errorMsg = () => toast.error("An error occurred!");
+    const warningMsg = () => toast.warning("Incorrect Email or Password!");
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -49,12 +50,27 @@ const Signin = () => {
                 },
                 data: user
             }).then((response) => {
-                successMsg()
                 console.log(response)
+                // display success alert
+                successMsg()
+
+                // clear input fields
+                setEmail("")
+                setPassword("")
+                setBtnValue("Log In")
+
+                // save token to local storage
+                saveToken(response.token)
+                
+                // wait for 2seconds then redirect to dashboard
+                setTimeout(() => {
+                    props.history.push("/users/dashboard")
+                }, 2000)
+                
             }).catch((error) => {
                 console.log(error);
                 setBtnValue("Log In")
-                errorMsg()
+                warningMsg()
             })
         }
     }

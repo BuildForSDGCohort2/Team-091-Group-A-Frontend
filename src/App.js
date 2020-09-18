@@ -29,7 +29,7 @@ function App() {
           <Route path="/cars" component={Cars} />
           <Route path="/tours" component={Tours} />
           <Route path="/attractions" component={Attractions} />
-          <Route path="/user/dashboard" component={Dashboard} />
+          <Route path="/users/dashboard" component={Dashboard} />
         </Switch>
         <Footer />
       </BrowserRouter>

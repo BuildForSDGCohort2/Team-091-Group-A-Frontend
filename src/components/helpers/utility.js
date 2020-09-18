@@ -1,15 +1,15 @@
 import jwt_decode from 'jwt-decode'
 
 export const saveToken = (token) => {
-    localStorage.setItem('christianconnectauthtoken', token)
+    localStorage.setItem('transAllToken', token)
 }
 
 export const getToken = () => {
-    return localStorage.getItem('christianconnectauthtoken')
+    return localStorage.getItem('transAllToken')
 }
 
 export const setAuthToken = () => {
-    return `Bearer ${localStorage.getItem('christianconnectauthtoken')}`
+    return `Bearer ${localStorage.getItem('transAllToken')}`
 }
 
 export const isLoggedIn = () => {
@@ -20,7 +20,7 @@ export const isLoggedIn = () => {
     try{
         let { exp } = jwt_decode(getToken())
         if( exp < Math.ceil(new Date().getTime() / 1000)){
-        localStorage.removeItem('christianconnectauthtoken')
+        localStorage.removeItem('transAllToken')
         return false
         }
     }catch(e){
@@ -30,12 +30,12 @@ export const isLoggedIn = () => {
 }
 
 export const logout = () => {
-    localStorage.removeItem('christianconnectauthtoken')
+    localStorage.removeItem('transAllToken')
     refreshCurrentPage()
 }
 
 const refreshCurrentPage = () => {
-    if(!localStorage.getItem('christianconnectauthtoken')){
+    if(!localStorage.getItem('transAllToken')){
         window.location.reload()
     }
 }
