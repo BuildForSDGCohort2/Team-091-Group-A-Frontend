@@ -6,7 +6,7 @@ const Attractions = () => {
     return (
         <div>
             <Navbar />
-            <div className="container">
+            <div className="container spaced">
                 <div className="row">
                     <h1>Attractions Page</h1>
                 </div>

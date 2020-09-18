@@ -4,3 +4,11 @@
     height: 100vh;
     background-size: 100% 100%;
 }
+
+/* Static pages temp styles */
+.spaced {
+    height: 70vh;
+    width: 100%;
+    background-image: url("../images/coming_soon.png");
+    background-size: 100% 100%;
+}

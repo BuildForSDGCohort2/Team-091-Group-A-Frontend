@@ -6,7 +6,7 @@ const Trains = () => {
     return (
         <div>
             <Navbar />
-            <div className="container">
+            <div className="container spaced">
                 <div className="row">
                     <h1>Trains Page</h1>
                 </div>

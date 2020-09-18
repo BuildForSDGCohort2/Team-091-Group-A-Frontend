@@ -6,7 +6,7 @@ const Hotels = () => {
     return (
         <div>
             <Navbar />
-            <div className="container">
+            <div className="container spaced">
                 <div className="row">
                     <h1>Hotels Page</h1>
                 </div>

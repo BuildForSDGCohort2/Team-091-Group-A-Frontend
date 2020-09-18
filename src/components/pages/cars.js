@@ -6,7 +6,7 @@ const Cars = () => {
     return (
         <div>
             <Navbar />
-            <div className="container">
+            <div className="container spaced">
                 <div className="row">
                     <h1>Cars Page</h1>
                 </div>
