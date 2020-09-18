@@ -128,7 +128,7 @@ const Signup = (props) => {
                                 </div>
                             </div>
                             <div className="row input-group pl-3 mb-3">
-                                <p>Already have an account? <Link to="/sign-in" className="">Log In</Link></p>
+                                <p>Already have an account? <Link to="/sign-in" className="">Log In</Link> or <Link to="/" className="">Go Back</Link></p>
                             </div>
                         </form>
                     </div>

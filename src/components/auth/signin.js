@@ -104,7 +104,7 @@ const Signin = (props) => {
                                 </div>
                             </div>
                             <div className="row input-group pl-3 mb-3">
-                                <p>Don't have an account? <Link to="/sign-up" className="">Sign Up</Link></p>
+                                <p>Don't have an account? <Link to="/sign-up" className="">Sign Up</Link>  or <Link to="/" className="">Go Back</Link></p>
                             </div>
                         </form>
                     </div>
