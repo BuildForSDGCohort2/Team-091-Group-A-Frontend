@@ -48,9 +48,8 @@ const Signin = (props) => {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                data: JSON.stringify(user)
+                data: user
             }).then((response) => {
-                console.log(response)
                 // display success alert
                 successMsg()
 
@@ -60,9 +59,10 @@ const Signin = (props) => {
                 setBtnValue("Log In")
 
                 // save token to local storage
-                saveToken(response.token)
+                const { token } = response.data
+                saveToken(token)
                 
-                // wait for 2seconds then redirect to dashboard
+                // wait for 2 seconds then redirect to dashboard
                 setTimeout(() => {
                     props.history.push("/users/dashboard")
                 }, 2000)
