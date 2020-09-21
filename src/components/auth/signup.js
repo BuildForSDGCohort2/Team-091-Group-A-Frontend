@@ -33,6 +33,13 @@ const Signup = (props) => {
             setError("*Enter a valid email address")
             return false;
         }
+
+        // check password length
+        if (password.length < 5 || confirmPassword.length < 5){
+            setError("*Password must be 5 characters or more")
+            return false;
+        }
+
         // if all data is provided
         if ((firstname && lastname && email && password && confirmPassword) && password === confirmPassword){
             setError("")
