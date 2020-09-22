@@ -1,24 +1,34 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
+import {BrowserRouter, Switch, Route} from "react-router-dom"
+import Home from "./components/pages/home";
+import Signin from "./components/auth/signin"
+import Signup from "./components/auth/signup"
+import Hotels from "./components/pages/hotels";
+import Flights from "./components/pages/flights";
+import Trains from "./components/pages/trains";
+import Cars from "./components/pages/cars";
+import Tours from "./components/pages/tours";
+import Attractions from "./components/pages/attractions";
+import Dashboard from "./components/users/dashboard";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/sign-in" component={Signin} />
+          <Route path="/sign-up" component={Signup} />
+          <Route path="/hotels" component={Hotels} />
+          <Route path="/flights" component={Flights} />
+          <Route path="/trains" component={Trains} />
+          <Route path="/cars" component={Cars} />
+          <Route path="/tours" component={Tours} />
+          <Route path="/attractions" component={Attractions} />
+          <Route path="/users/dashboard" component={Dashboard} />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
