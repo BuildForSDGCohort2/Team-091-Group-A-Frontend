@@ -5,8 +5,8 @@ const tokenConfig = (getState) => {
   // set headers
   const config = {
     headers: {
-      'Content-Type': 'application/json'
-    }
+      "Content-Type": "application/json",
+    },
   };
   // Adding Token
   if (token) {

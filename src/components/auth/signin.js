@@ -36,8 +36,9 @@ const Signin = (props) => {
     }
   };
   const query = new URLSearchParams(props.location.search);
-  const next = query.get('next');
-  if (isAuthenticated) return <Redirect to={next === null ? '/users/dashboard' : `/${next}`} />;
+  const next = query.get("next");
+  if (isAuthenticated)
+    return <Redirect to={next === null ? "/users/dashboard" : `/${next}`} />;
   return (
     <div>
       <div className="container-fluid auth-banner">

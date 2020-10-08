@@ -6,15 +6,15 @@ import {
   REGISTER_FAIL,
   REGISTER_SUCCESS,
   USER_LOADED,
-  USER_LOADING
-} from '../actions/types';
+  USER_LOADING,
+} from "../actions/types";
 
 const initialState = {
   isAuthenticated: null,
   isAdmin: null,
   isLoading: false,
-  token: localStorage.getItem('token'),
-  user: null
+  token: localStorage.getItem("token"),
+  user: null,
 };
 
 export default (state = initialState, action) => {
@@ -22,7 +22,7 @@ export default (state = initialState, action) => {
     case USER_LOADING:
       return {
         ...state,
-        isLoading: true
+        isLoading: true,
       };
     case USER_LOADED:
       return {
@@ -30,32 +30,32 @@ export default (state = initialState, action) => {
         isAuthenticated: true,
         isAdmin: action.payload.isAdmin,
         isLoading: false,
-        user: action.payload.user
+        user: action.payload.user,
       };
-      case LOGIN_SUCCESS:
-      case REGISTER_SUCCESS:
-      localStorage.setItem('token', action.payload.token);
+    case LOGIN_SUCCESS:
+    case REGISTER_SUCCESS:
+      localStorage.setItem("token", action.payload.token);
       return {
         ...state,
         ...action.payload,
         isAuthenticated: true,
         isAdmin: action.payload.user.isAdmin,
-        isLoading: false
+        isLoading: false,
       };
-      case AUTH_ERROR:
-      case LOGIN_FAIL:
-      case LOGOUT_SUCCESS:
-      case REGISTER_FAIL:
-        localStorage.removeItem('token');
-        return {
-          ...state,
-          isAuthenticated: false,
-          isAdmin: false,
-          isLoading: false,
-          token: null,
-          user: null
-        };
-      default:
-        return state;
+    case AUTH_ERROR:
+    case LOGIN_FAIL:
+    case LOGOUT_SUCCESS:
+    case REGISTER_FAIL:
+      localStorage.removeItem("token");
+      return {
+        ...state,
+        isAuthenticated: false,
+        isAdmin: false,
+        isLoading: false,
+        token: null,
+        user: null,
+      };
+    default:
+      return state;
   }
-}
+};

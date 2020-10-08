@@ -2,31 +2,30 @@
 /* eslint-disable max-statements */
 /* eslint-disable sort-imports */
 // eslint-disable-next-line import/no-extraneous-dependencies
-import PropTypes from 'prop-types';
-import React, { Component, Fragment } from 'react';
-import { withAlert } from 'react-alert';
-import { connect } from 'react-redux';
-
+import PropTypes from "prop-types";
+import React, { Component, Fragment } from "react";
+import { withAlert } from "react-alert";
+import { connect } from "react-redux";
 
 class Alerts extends Component {
   static propTypes = {
     alert: PropTypes.object.isRequired,
     error: PropTypes.object.isRequired,
-    message: PropTypes.object.isRequired
-  }
+    message: PropTypes.object.isRequired,
+  };
 
   componentDidUpdate(prevProps) {
     const { error, alert, message } = this.props;
     if (error !== prevProps.error) {
-      if (error.msg.error){
-            alert.error(`${error.msg.error}`);
-          }
+      if (error.msg.error) {
+        alert.error(`${error.msg.error}`);
+      }
       if (error.msg) {
         if (error.msg.message) {
-            alert.error(`Message: ${error.msg.message}`);
-          } else {
-            alert.error(error.msg);
-          }
+          alert.error(`Message: ${error.msg.message}`);
+        } else {
+          alert.error(error.msg);
+        }
       }
     }
     if (message !== prevProps.message) {
@@ -40,13 +39,11 @@ class Alerts extends Component {
   }
 
   render() {
-    return (
-      <Fragment />
-    );
+    return <Fragment />;
   }
 }
 const MapStateToProps = (state) => ({
   error: state.errors,
-  message: state.messages
+  message: state.messages,
 });
 export default connect(MapStateToProps)(withAlert()(Alerts));

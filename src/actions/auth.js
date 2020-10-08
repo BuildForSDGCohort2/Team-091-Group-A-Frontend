@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 import {
   AUTH_ERROR,
   LOGIN_FAIL,
@@ -7,42 +7,42 @@ import {
   REGISTER_FAIL,
   REGISTER_SUCCESS,
   USER_LOADED,
-  USER_LOADING
-} from './types';
+  USER_LOADING,
+} from "./types";
 
-import { returnErrors } from './messages';
+import { returnErrors } from "./messages";
 import tokenConfig from "../components/helpers/tokenConfig";
-const baseUrl = "https://backend-91.herokuapp.com/api/v1/auth"
+const baseUrl = "https://backend-91.herokuapp.com/api/v1/auth";
 export const registerUser = (user) => (dispatch) => {
   const config = {
     headers: {
-      'Content-Type': 'application/json'
-    }
+      "Content-Type": "application/json",
+    },
   };
   const body = JSON.stringify(user);
-    axios
-      .post(`${baseUrl}/register`, body, config)
-      .then((res) => {
-        dispatch({
-          payload: res.data,
-          type: REGISTER_SUCCESS
+  axios
+    .post(`${baseUrl}/register`, body, config)
+    .then((res) => {
+      dispatch({
+        payload: res.data,
+        type: REGISTER_SUCCESS,
       });
     })
     .catch((error) => {
       console.log(error);
       dispatch(returnErrors(error.response.data, error.response.status));
       dispatch({
-        type: REGISTER_FAIL
+        type: REGISTER_FAIL,
       });
     });
-}
+};
 // LOGIN
 
 export const login = ({ email, password }) => (dispatch) => {
   const config = {
     headers: {
-      'Content-Type': 'application/json'
-    }
+      "Content-Type": "application/json",
+    },
   };
   // Request Body
   const body = JSON.stringify({ email, password });
@@ -51,28 +51,28 @@ export const login = ({ email, password }) => (dispatch) => {
     .then((res) => {
       dispatch({
         payload: res.data,
-        type: LOGIN_SUCCESS
+        type: LOGIN_SUCCESS,
       });
     })
     .catch((error) => {
-      console.log(error)
+      console.log(error);
       dispatch(returnErrors(error.response.data, error.response.status));
       dispatch({
-        type: LOGIN_FAIL
+        type: LOGIN_FAIL,
       });
     });
 };
 // LOGOUT
 export const logout = () => (dispatch) => {
-      dispatch({
-        type: LOGOUT_SUCCESS
-      });
+  dispatch({
+    type: LOGOUT_SUCCESS,
+  });
 };
 
 export const loadUser = () => (dispatch, getState) => {
   // set user loading
   dispatch({
-    type: USER_LOADING
+    type: USER_LOADING,
   });
 
   axios
@@ -80,13 +80,13 @@ export const loadUser = () => (dispatch, getState) => {
     .then((res) => {
       dispatch({
         payload: res.data,
-        type: USER_LOADED
+        type: USER_LOADED,
       });
     })
     .catch((error) => {
       dispatch(returnErrors(error.response.data, error.response.status));
       dispatch({
-        type: AUTH_ERROR
+        type: AUTH_ERROR,
       });
     });
 };
