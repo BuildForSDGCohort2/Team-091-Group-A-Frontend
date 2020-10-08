@@ -7,3 +7,8 @@
 .selected {
     color: #000 !important;
 }
+.initials {
+    border-radius: 50%;
+    background: blue;
+    padding: 5px;
+}

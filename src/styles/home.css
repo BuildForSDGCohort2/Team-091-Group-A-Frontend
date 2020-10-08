@@ -1,8 +1,10 @@
 .home-banner {
-    background-image: url("../images/bg4.png");
+    display: flex;
+    background-image: url("https://res.cloudinary.com/kayode/image/upload/v1601719058/TransAll/daniel-abadia-Njq3Nz6-5rQ-unsplash_eqywbj.jpg");
     width: 100%;
     height: 100vh;
     background-size: 100% 100%;
+     box-shadow:inset 0 0 0 2000px rgba(255, 0, 150, 0.3);
 }
 
 /* Static pages temp styles */
@@ -11,4 +13,165 @@
     width: 100%;
     background-image: url("../images/coming_soon.png");
     background-size: 100% 100%;
+}
+
+.info-box {
+    flex: 1;
+    text-align: left;
+    padding: 5em 3em;
+    color: white;
+}
+.carousel-cont {
+    padding-top: 3em;
+}
+.home-banner .card {
+    color: blue;
+}
+.getInfoContainer  {
+    flex: 1;
+}
+.getInfoContainer form {
+    background: rgba(192, 192, 192, 0.3);
+    width: 80%;
+    margin: 5em auto;
+    padding: 4em 3em;
+}
+.getInfoContainer form > .form-group > input {
+    height: 3em;
+    width: 90%;
+    padding: 1em;
+    font-size: 1.5em;
+    font-weight: bolder;
+    border-radius: 15px;
+    border: 0;
+}
+.getInfoContainer form > .form-group > input:focus {
+    border: 0;
+    outline: 0;
+}
+.getInfoContainer form > h3 {
+    color: white;
+}
+.getInfoContainer form > button {
+    background: blue;
+    padding: .5em 4em;
+    outline: 0;
+    border: 0;
+    color: whitesmoke;
+    font-size: 1.5em;
+}
+.our-offer {
+    width: 100%;
+    /* height: 100vh; */
+    background: whitesmoke;
+    text-align: center;
+}
+.offer-box-cont {
+    width: 80%;
+    margin: 1em auto;
+}
+.offer-box {
+    display: flex;
+    background-color: #ccc;
+    color: black;
+}
+.offer-box h5 {
+    color: blue;
+}
+.top {
+    display: flex;
+
+}
+.top > div {
+    margin: 1em;
+    padding: 1em;
+}
+.icon {
+    padding: 3em 1em;
+}
+.top > div p {
+    font-size: .8em;
+}
+.industry {
+    display: flex;
+    box-sizing: border-box;
+}
+.industry-box-1 {
+    flex: 1;
+    background-color: #083E9E;
+    color: whitesmoke;
+}
+.industry-box-1 > h4 {
+    text-transform: uppercase;
+}
+.industry-box-1  ul {
+    list-style: none;
+}
+.industry-box-1  ul li {
+    display: flex;
+    justify-content: center;
+}
+.industry-box-1  ul li span {
+    margin-left: 1em;
+}
+
+.industry-box-2 {
+    flex: 1;
+}
+.industry-box-2  img {
+    width: 100%;
+    height: 400px;
+}
+
+@media only screen and (max-width: 600px) {
+    .home-banner {
+        flex-direction: column-reverse;
+        height: 100%;
+    }
+    .getInfoContainer form {
+    background: rgba(192, 192, 192, 0.3);
+    width: 95%;
+    margin: 2em auto;
+    padding: 2em 1.5em;
+}
+.getInfoContainer form > .form-group > input {
+    height: 2em;
+    width: 100%;
+    padding: 1em;
+    font-size: 1.2em;
+    border-radius: 15px;
+    border: 0;
+}
+.getInfoContainer form > button {
+    padding: .5em 2em;
+    font-size: 1em;
+}
+.info-box {
+    text-align: center;
+    padding: 2em 1.5em;
+    color: white;
+}
+.info-box h1 {
+  display: none;
+}
+.offer-box-cont {
+    width: 95%;
+    margin: 1em auto;
+}
+.top {
+    flex-direction: column;
+}
+.industry {
+    flex-direction: column-reverse;
+}
+}
+
+@media screen and (max-width: 800px) and (min-width: 601px) {
+    .home-banner {
+        flex-direction: column-reverse;
+    }
+    .offer-box-cont {
+    width: 95%;
+    margin: 1em auto;
+}
 }
