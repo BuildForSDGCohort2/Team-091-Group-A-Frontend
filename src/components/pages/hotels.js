@@ -1,19 +1,15 @@
-import React from "react"
-import Navbar from "../layouts/navbar"
-import Footer from "../layouts/footer"
+import React from "react";
 
 const Hotels = () => {
-    return (
-        <div>
-            <Navbar />
-            <div className="container spaced">
-                <div className="row">
-                    <h1>Hotels Page</h1>
-                </div>
-            </div>
-            <Footer />
+  return (
+    <div>
+      <div className="container spaced">
+        <div className="row">
+          <h1>Hotels Page</h1>
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
-export default Hotels
+export default Hotels;

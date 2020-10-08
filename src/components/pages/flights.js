@@ -1,19 +1,15 @@
-import React from "react"
-import Navbar from "../layouts/navbar"
-import Footer from "../layouts/footer"
+import React from "react";
 
 const Flights = () => {
-    return (
-        <div>
-            <Navbar />
-            <div className="container spaced">
-                <div className="row">
-                    <h1>Flights Page</h1>
-                </div>
-            </div>
-            <Footer />
+  return (
+    <div>
+      <div className="container spaced">
+        <div className="row">
+          <h1>Flights Page</h1>
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
-export default Flights
+export default Flights;
