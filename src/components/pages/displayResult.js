@@ -133,7 +133,7 @@ const DisplayData = (props) => {
         </h2>
       </div>
       <Modal show={show} handleClose={hideModal}>
-        <div className="card col-6 modal-card">
+        <div className="card modal-card">
           <ShowDetail />
           <div className="card-footer">
             <p>Please Select the Date you are Travelling </p>

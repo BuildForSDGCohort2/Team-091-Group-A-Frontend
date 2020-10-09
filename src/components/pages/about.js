@@ -1,15 +1,15 @@
-import React from "react";
+import React from 'react'
 
-const Flights = () => {
+const About = () => {
   return (
     <div>
       <div className="container spaced">
         <div className="row">
-          <h1>Flights Page</h1>
+          <h1>About Page</h1>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Flights;
+export default About
