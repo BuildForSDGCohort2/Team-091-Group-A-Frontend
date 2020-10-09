@@ -48,61 +48,34 @@ const Navbar = () => {
               <NavLink
                 className="nav-link"
                 activeClassName="selected"
-                to="/hotels"
+                to="/about"
               >
-                Hotels
+                About
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink
                 className="nav-link"
                 activeClassName="selected"
-                to="/flights"
+                to="/services"
               >
-                Flights
+                Services
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink
                 className="nav-link"
                 activeClassName="selected"
-                to="/trains"
+                to="/contactus"
               >
-                Trains
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                className="nav-link"
-                activeClassName="selected"
-                to="/cars"
-              >
-                Cars
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                className="nav-link"
-                activeClassName="selected"
-                to="/tours"
-              >
-                Tours
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                className="nav-link"
-                activeClassName="selected"
-                to="/attractions"
-              >
-                Attractions
+                Contact Us
               </NavLink>
             </li>
             {isAuthenticated ? (
               <>
                 <li className="nav-item">
-                  <NavLink to="/users/dashboard" className="nav-link initials">
-                    {getInitial(user)}
+                  <NavLink to="/users/dashboard" className="nav-link">
+                    <span className="initials">{getInitial(user)}</span>
                   </NavLink>
                 </li>
                 <li className="nav-item">

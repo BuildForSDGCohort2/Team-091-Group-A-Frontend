@@ -1,15 +1,15 @@
-import React from "react";
+import React from 'react'
 
-const Hotels = () => {
+const Services = () => {
   return (
     <div>
       <div className="container spaced">
         <div className="row">
-          <h1>Hotels Page</h1>
+          <h1>Services Page</h1>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Hotels;
+export default Services;

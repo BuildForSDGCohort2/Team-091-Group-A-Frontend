@@ -1,15 +1,15 @@
-import React from "react";
+import React from 'react'
 
-const Tours = () => {
+const Contact = () => {
   return (
     <div>
       <div className="container spaced">
         <div className="row">
-          <h1>Tours Page</h1>
+          <h1>Contact </h1>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Tours;
+export default Contact;

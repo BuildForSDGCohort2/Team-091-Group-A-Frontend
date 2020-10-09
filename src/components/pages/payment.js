@@ -50,32 +50,34 @@ const Payment = () => {
             {formatMoney(order ? order.amount : "")}
           </span>
         </h5>
-        <table className="table table-bordered table-striped">
-          <thead>
-            <tr>
-              <th>Provider Name</th>
-              <th>Departure Date</th>
-              <th>From</th>
-              <th>Destination</th>
-              <th>Price(₦)</th>
-            </tr>
-          </thead>
-          <tbody>
-            {services ? (
-              services.map((service) => (
-                <tr key={service._id}>
-                  <td>{service.provider.serviceProvider}</td>
-                  <td>{moment(order ? order.dateOfOrder : "").format("L")}</td>
-                  <td>{service.origin}</td>
-                  <td>{service.destination}</td>
-                  <td>{service.price} </td>
-                </tr>
-              ))
-            ) : (
-              <tr></tr>
-            )}
-          </tbody>
-        </table>
+        <div className="table-responsive">
+          <table className="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Provider Name</th>
+                <th>Departure Date</th>
+                <th>From</th>
+                <th>Destination</th>
+                <th>Price(₦)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {services ? (
+                services.map((service) => (
+                  <tr key={service._id}>
+                    <td>{service.provider.serviceProvider}</td>
+                    <td>{moment(order ? order.dateOfOrder : "").format("L")}</td>
+                    <td>{service.origin}</td>
+                    <td>{service.destination}</td>
+                    <td>{service.price} </td>
+                  </tr>
+                ))
+              ) : (
+                <tr></tr>
+              )}
+            </tbody>
+          </table>
+        </div>
       </div>
       <div className="card-footer">
         <button
