@@ -33,6 +33,7 @@ class Alerts extends Component {
       if (message.notNull) alert.error(message.notNull);
       if (message.emailNotValid) alert.error(message.emailNotValid);
       if (message.paymentSuccess) alert.success(message.paymentSuccess);
+      if (message.msgSuccess) alert.success(message.msgSuccess);
       if (message.paymentClose) alert.info(message.paymentClose);
       if (message.paymentError) alert.error(message.paymentError);
     }
