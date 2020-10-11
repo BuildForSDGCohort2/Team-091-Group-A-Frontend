@@ -2,9 +2,8 @@ import React from "react";
 import "../../styles/dashboard.css";
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 
-const Dashboard = () => {
+const Chat = () => {
   const user = useSelector(state => state.auth.user);
   return (
     <div className="dashboard-cont">
@@ -51,24 +50,11 @@ const Dashboard = () => {
       </div>
       <div className="dashboard-mainbar">
         <div className="dashboard-mainbar-header">
-          <h3>DashBoard</h3>
-          <h5>Welcome to TransAll</h5>
-          <p>Here is a list of things that you Could Do</p>
-          <ul className="list-group">
-            <li className="list-group-item">
-              <Link to="/travel/info">Book Tickets</Link>
-            </li>
-            <li className="list-group-item">
-              <Link to="/users/chat">Chat With Our 24/7 Agent to Make Enquiry</Link>
-            </li>
-            <li className="list-group-item">
-              <Link to="/users/orders">Check Orders</Link>
-            </li>
-          </ul>
+          <h3>Chat</h3>
         </div>
       </div>
     </div>
   );
 };
 
-export default Dashboard;
+export default Chat;
