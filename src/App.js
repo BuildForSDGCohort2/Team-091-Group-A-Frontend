@@ -22,6 +22,9 @@ import About from "./components/pages/about";
 import Services from './components/pages/services';
 import Contact from "./components/pages/contact";
 import NotFound from "./components/layouts/page";
+import ChangePassword from "./components/users/changePassword";
+import UserOrders from "./components/users/UserOrders";
+import Chat from './components/users/chat';
 
 const alertOptions = {
   position: "top center",
@@ -63,6 +66,21 @@ function App() {
                   path="/users/dashboard"
                   component={Dashboard}
                   next={"users/dashboard"}
+                />
+                <PrivateRoute
+                  path="/users/change-password"
+                  component={ChangePassword}
+                  next={"users/change-password"}
+                />
+                <PrivateRoute
+                  path="/users/orders"
+                  component={UserOrders}
+                  next={"users/orders"}
+                />
+                <PrivateRoute
+                  path="/users/chat"
+                  component={Chat}
+                  next={"users/chat"}
                 />
                 <Route component={NotFound} />
               </Switch>

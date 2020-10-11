@@ -61,6 +61,7 @@ const Signin = (props) => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     aria-label="email"
+                    autoComplete="email"
                   />
                 </div>
               </div>
@@ -74,6 +75,7 @@ const Signin = (props) => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     aria-label="password"
+                    autoComplete="current-password"
                   />
                 </div>
               </div>

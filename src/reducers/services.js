@@ -2,6 +2,7 @@ import {
   SEARCH_SERVICES,
   GET_ORDER_DETAILS,
   MAKE_PAYMENT,
+  ORDER_BY_USER
 } from "../actions/types";
 
 const initialState = {
@@ -12,6 +13,7 @@ const initialState = {
   key: "FLWPUBK_TEST-2432438e00d15b36d449ca3f1ef8b050-X",
   sales: 0,
   seckey: "FLWSECK_TEST-471857a280dfcd960f66aec3aa0e3d42-X",
+  userOrders: []
 };
 
 export default (state = initialState, action) => {
@@ -32,6 +34,11 @@ export default (state = initialState, action) => {
         ...state,
         paymentDetails: action.payload.data,
       };
+      case ORDER_BY_USER:
+        return {
+          ...state,
+          userOrders: action.payload.data
+        }
     default:
       return state;
   }

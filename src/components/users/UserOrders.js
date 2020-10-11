@@ -2,10 +2,11 @@ import React from "react";
 import "../../styles/dashboard.css";
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { moment } from 'moment';
 
-const Dashboard = () => {
+const UserOrders = () => {
   const user = useSelector(state => state.auth.user);
+  const userOrders = useSelector(state => state.services.userOrders)
   return (
     <div className="dashboard-cont">
       <div className="dashboard-sidebar bg-primary">
@@ -51,24 +52,40 @@ const Dashboard = () => {
       </div>
       <div className="dashboard-mainbar">
         <div className="dashboard-mainbar-header">
-          <h3>DashBoard</h3>
-          <h5>Welcome to TransAll</h5>
-          <p>Here is a list of things that you Could Do</p>
-          <ul className="list-group">
-            <li className="list-group-item">
-              <Link to="/travel/info">Book Tickets</Link>
-            </li>
-            <li className="list-group-item">
-              <Link to="/users/chat">Chat With Our 24/7 Agent to Make Enquiry</Link>
-            </li>
-            <li className="list-group-item">
-              <Link to="/users/orders">Check Orders</Link>
-            </li>
-          </ul>
+          <h3>Orders By User</h3>
+          <div className="table-responsive">
+            <table className="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>Provider Name</th>
+                  <th>Provider Type</th>
+                  <th>Departure Date</th>
+                  <th>From</th>
+                  <th>Destination</th>
+                  <th>Price(₦)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  userOrders ? userOrders.map(order => (
+                    <tr key={order._id}>
+                      <td>{order.service.serviceProvider}</td>
+                      <td>{order.service.serviceType}</td>
+                      <td>{moment(order ? order.dateOfOrder : "").format("L")}</td>
+                      <td>{order.service.origin}</td>
+                      <td>{order.service.destination}</td>
+                      <td>{order.amount}</td>
+                      <td><button className="btn btn-outline-success">Get Ticket</button></td>
+                    </tr>  
+                  )) : <tr><td colSpan="6">You haven't ordered For anything Yet</td></tr>
+                }
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default Dashboard;
+export default UserOrders;

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { SEARCH_SERVICES, GET_ORDER_DETAILS, MAKE_PAYMENT } from "./types";
+import { SEARCH_SERVICES, GET_ORDER_DETAILS, MAKE_PAYMENT, ORDER_BY_USER } from "./types";
 import { returnErrors, createMessage } from "./messages";
 import tokenConfig from "../components/helpers/tokenConfig";
 
@@ -56,6 +56,20 @@ export const makePayment = (id) => (dispatch, getState) => {
         payload: res.data,
         type: MAKE_PAYMENT,
       });
+    })
+    .catch((error) => {
+      dispatch(returnErrors(error.response.data, error.response.status));
+    });
+};
+
+export const getUserOrder = () => (dispatch, getState) => {
+  const url = `${baseUrl}/orders/user`
+  axios.get(url, tokenConfig(getState))
+    .then((res) => {
+      dispatch({
+        payload: res.data,
+        type: ORDER_BY_USER
+      })
     })
     .catch((error) => {
       dispatch(returnErrors(error.response.data, error.response.status));
